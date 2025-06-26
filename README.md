@@ -6,6 +6,8 @@ A lightweight task wrapper for [RAGE:MP](https://rage.mp/) that helps safely exe
 
 This wrapper solves a common problem in RAGE:MP when calling `NAPI` functions (e.g. manipulating vehicles, players) from background threads — which can lead to crashes or undefined behavior.
 
+✅ It includes an internal check to **avoid unnecessary transitions** to the main thread if already inside it.
+
 It provides:
 - Safe main-thread execution via `SafeRun()`
 - Easy return to main thread after `async/await` via `ReturnToMainThread()`
@@ -45,5 +47,3 @@ NAPI.Vehicle.SetVehicleNumberPlate(vehicleHandle, vehicle.Number);
 ## 💡 Install
 
 Copy `GtaTaskExtension.cs` into your RAGE:MP server project.
-
----
